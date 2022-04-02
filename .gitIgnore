@@ -1,0 +1,9 @@
+node_modules
+bot-back.code-workspace
+backups
+TEST.js
+.env
+
+#Only Host
+OH*
+*/OH*

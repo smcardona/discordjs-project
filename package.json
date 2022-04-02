@@ -1,0 +1,23 @@
+{
+  "name": "bot",
+  "version": "1.0.0",
+  "description": "A discord bot project, to learn the language and the API",
+  "main": "bot.js",
+  "scripts": {
+    "start": "node bot.js",
+    "dev": "npx nodemon bot.js"
+  },
+  "keywords": [],
+  "author": "DevPepesito",
+  "license": "ISC",
+  "dependencies": {
+    "@discordjs/opus": "^0.7.0",
+    "discord.js": "^12.5.3",
+    "dotenv": "^16.0.0",
+    "express": "^4.17.3",
+    "ffmpeg-static": "^4.4.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.8"
+  }
+}
