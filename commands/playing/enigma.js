@@ -22,7 +22,7 @@ module.exports = {
   expectedArgs: '[1 or more words]',
   permissions: [],
   requireRoles: [],
-  async execute(client, message, args, text, prefix) {
+  async execute(client, message, args, text, prefix, test_) {
     /* Que debo hacer?
         D Primero que todo se recibe el mensaje, cada caracter debe procesarse por medio de los rotores
         D Cada rotor tendrá una convinacion aleatoria hecha por mi
@@ -73,6 +73,11 @@ module.exports = {
       }
       return outT;
     };
+    if (test_) {
+      console.log(run(inT).toUpperCase());
+      return
+    }
     message.channel.send(run(inT).toUpperCase());
   }
 };
+
