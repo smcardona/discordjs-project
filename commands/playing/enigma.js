@@ -7,7 +7,6 @@ const ro6 = require('../../lib/objects/enigma/rotores/VI.js');
 const ro7 = require('../../lib/objects/enigma/rotores/VII.js');
 const ro8 = require('../../lib/objects/enigma/rotores/VIII.js');
 const reB = require('../../lib/objects/enigma/reflectores/B.js');
-const trl = require('../../lib/objects/traductor.js');
 const tr = require('../../lib/objects/traductor.js');
 module.exports = {
   name: 'enigma',
@@ -45,37 +44,42 @@ module.exports = {
       reflector: reB,
     };
     function run(txt) {
-      let outT = "";
-      let rotors = machine.rotors.length;
-      for (char of txt) {
-        if (char === " ") { outT += " "; continue; };
-        let tempL = tr[char];
-        for (let i = 0; i < rotors * 2 + 1; i++) {
-          let tempR = rotors - (i - rotors);
-          if (i === rotors) {
+      let outT = ""; // Output variable
+      let rotors = machine.rotors.length; // Amount of rotors that user has
+      for (char of txt) { // Iterates all characters even spaces
+        if (char === " ") { outT += " "; continue; }; // Doesnt translate spaces
+        let tempL = tr[char]; // Translates the letter to number
+        for (let j = 0; j < rotors * 2 + 1; j++) { // Cycles trough rotors and reflectors
+          let cycles = rotors - Math.abs(j - rotors); // 0, 1, 2, ..n, reflector, n.., 2, 1, 0
+          if (j === rotors) { // The middle cycle when we use the reflector
             tempL = machine.reflector[tempL];
 
-            // console.log("REF:", tempR, i, tr[tempL], ": " + tr[machine.reflector[tempL]]);
-          } else if (i > rotors) {
-            tempL = machine.rotors[tempR].t[tempL];
 
-            // console.log("ROT~:", [tempR], i, tr[tempL], ": " + tempL);
-          } else if (i < rotors) {
-            tempL = machine.rotors[i].g[tempL];
+            /* console.log("REF:", cycles, j, tr[tempL], ": " + tr[machine.reflector[tempL]]); */
+          } else if (j > rotors) { // Turning cycles when the signal is going backwards trough the rotors
+            tempL = machine.rotors[cycles].t(tempL);
 
-            // console.log("ROT:", tempR, [i], tr[tempL], ": " + tempL);
+
+            /* console.log("ROT~:", [cycles], j, tr[tempL], ": " + tempL); */
+          } else if (j < rotors) { // Going cycles when the signal is going forward trough the rotors
+            tempL = machine.rotors[cycles].g(tempL);
+
+
+            /* console.log("ROT:", cycles, [j], tr[tempL], ": " + tempL); */
           }
 
-          // console.log(char.toUpperCase(), "| " + tr[tempL], ">>", tempR, i + 1);
+
+          /* console.log(char.toUpperCase(), "| " + tr[tempL], ">>", cycles, j + 1); */
         }
-        // console.log("--------------------");
+
         outT += tr[tempL];
       }
       return outT;
     };
     if (test_) {
-      console.log(run(inT).toUpperCase());
-      return
+      let res = run(inT).toUpperCase()
+      console.log(res);
+      return res;
     }
     message.channel.send(run(inT).toUpperCase());
   }
