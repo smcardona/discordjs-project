@@ -11,7 +11,7 @@ module.exports = {
   expectedArgs: '',
   permissions: [],
   requireRoles: [],
-  async execute(client, message, args, text, prefix) {
+  async execute({ message }) {
     let URL = 'DELETED URL FOR PRIVACY\n';
     let policy = "This url is private, this should not leave from the server, don't share it\n";
     let status = "This is not working right now, is a void page because its in progress"

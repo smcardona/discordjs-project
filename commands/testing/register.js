@@ -12,10 +12,7 @@ module.exports = {
     permissions: [],
     requireRoles: ['staffID'],
     test: true,
-    async execute(client, message, args, text, prefix) {
+    async execute({/* Needed args */ }) {
         // not now son
-    },
-    async testing(client, message, args, text, prefix) {
-        
     }
 };

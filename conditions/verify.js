@@ -1,10 +1,10 @@
 const { serverRoleID } = require('../OH/IDS.json');
 module.exports = {
     name: 'VerifyChannelMannager',
-    condition(client, message) {
+    condition({ message }) {
         if (message.channel.name == 'verify') { return true } else { return false };
     },
-    async execute(client, message) {
+    async execute({ message }) {
         if (message.content.toLowerCase() !== 'fish') {
             await message.delete();
             return;

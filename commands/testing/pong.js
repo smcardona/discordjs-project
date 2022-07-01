@@ -11,7 +11,7 @@ module.exports = {
     expectedArgs: '',
     permissions: [],
     requireRoles: [],
-    async execute(client, message, args, text, prefix) {
+    async execute({ message }) {
         message.reply('Ping!')
     }
 };

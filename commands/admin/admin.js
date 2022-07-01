@@ -13,7 +13,7 @@ module.exports = {
     expectedArgs: '[on|off] <User_ID>',
     permissions: [],
     requireRoles: [],
-    async execute(client, message, args, text, prefix) {
+    async execute({ message, args }) {
         const sRole = message.guild.roles.resolve(staffRoleID);
         const toAdm = message.guild.members.resolve(args[1]) || message.member;
 
