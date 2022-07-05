@@ -2,15 +2,8 @@ module.exports = {
   name: 'web',
   aliases: ['page'],
   description: 'This commands sends the webpage of the bot',
-  guildOnly: false,
-  OnlyOwner: false,
   minArgs: 0,
   maxArgs: null,
-  mentionChannels: false,
-  mentionUsers: false,
-  expectedArgs: '',
-  permissions: [],
-  requireRoles: [],
   async execute({ message }) {
     let URL = 'DELETED URL FOR PRIVACY\n';
     let policy = "This url is private, this should not leave from the server, don't share it\n";

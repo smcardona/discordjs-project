@@ -4,25 +4,21 @@ module.exports = {
   name: 'enigma',
   aliases: ['en', 'enc'],
   description: 'Encripta / Desencripta un mensaje dependiendo del programa seleccionado',
-  guildOnly: false,
-  OnlyOwner: false,
   minArgs: 1,
   maxArgs: null,
   expectedArgs: '[+1 characters]',
-  permissions: [],
-  requireRoles: [],
   async execute({ message, text }, test_) {
     /* Que debo hacer?
         D Primero que todo se recibe el mensaje, cada caracter debe procesarse por medio de los rotores
         D Cada rotor tendrá una convinacion aleatoria hecha por mi
-        - D El programa default tendra 3 rotores comunes, se pueden añadir diferentes rotores hasta 10, más = con privilegios
-        - D El ultimo rotor devolverá la señal de nuevo a los 3 rotores de forma inversa
+        D El programa default tendra 3 rotores comunes, se pueden añadir diferentes rotores hasta 10, más = con privilegios
+        D El ultimo rotor devolverá la señal de nuevo a los 3 rotores de forma inversa
         - PPP Cada rotor debe tener un pin programable para que su constante giro sea desde una posicion mas arriba de la anterior [DIFICIL CREO]
         - PPP Una vez la señal pasa por todos los rotores se dirige al panel donde se podrá llegar a cambiar el resultado de los rotores
           por el resultado al cual se le asigne, como un rotor configurable
         D Los espacios no se codifican
         D Los rotores deben girar cada ciclo y girar 1+ el rotor siguiente 
-        - PPP Los rotores se podran posicionar y ordenar antes de utilizarse
+        D Los rotores se podran posicionar y ordenar antes de utilizarse
         - PPP Incorporación de usuarios, contraseñas de desencriptado e instrucciones
 
     */
