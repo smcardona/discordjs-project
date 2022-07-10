@@ -7,7 +7,7 @@ module.exports = {
   minArgs: 1,
   maxArgs: null,
   expectedArgs: '[+1 characters]',
-  async execute({ message, text }, test_) {
+  async execute({ message, text }, _test) {
     /* Que debo hacer?
         D Primero que todo se recibe el mensaje, cada caracter debe procesarse por medio de los rotores
         D Cada rotor tendrá una convinacion aleatoria hecha por mi
@@ -46,7 +46,7 @@ module.exports = {
     if (sets.eng === undefined) noset = true
     // Ill try to make a system to generate passwords to ppl that wants security but are lazy
 
-    if (test_) {
+    if (_test) {
       let res = runner(inT, sets, noset)
       console.log(res)
       return res

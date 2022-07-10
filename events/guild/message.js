@@ -30,13 +30,15 @@ module.exports = async (client, message) => {
 
   if (command) {
     let parameters = { client, message, args, text: args.join(' '), prefix, cmd }
-    let normalPrc = commandProcess.bind(command, parameters);
-    await normalPrc().then(await command.execute(parameters))
+    let normalPrc = commandProcess.bind(command, parameters)
+
+    await normalPrc() && await command.execute(parameters)
       .catch(error => {
         console.log(error);
-        return logChannel.send(
-          `El error fue **\`${error.message}\`** en el comando **\`${command.name}\`**.
-			En el canal <#${message.channel.id}>.`);
+        return logChannel.send(`
+        El error fue **\`${error.message}\`** en el comando **\`${command.name}\`**.
+			  En el canal <#${message.channel.id}>.
+        `);
       })
   }
 
