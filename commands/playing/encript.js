@@ -1,7 +1,7 @@
 const runner = require('../../lib/objects/enigma/pieces.js')
 
 module.exports = {
-  name: 'enigma',
+  name: 'encript',
   aliases: ['en', 'enc'],
   description: 'Encripta / Desencripta un mensaje dependiendo del programa seleccionado',
   minArgs: 1,
@@ -24,6 +24,7 @@ module.exports = {
         D Contraseñas de desencriptado 
         - PPP La salida del encriptado debe ser dividida en grupos de una cantidad de caracteres aleatoria
         - PPP La salida de un desencriptado debe ser unida y luego remplazar el grupo de letras que simbolicen espacios [DEBO PENSARLO]
+        D La maquina puede interpretar numeros y algunos caracteres
 
     */
     let noset, inT, sets = {};
@@ -47,12 +48,12 @@ module.exports = {
 
     // Everything here has been moved to /lib/objects/enigma/pieces.js
 
-    // This line right here executes whenever the input doesnt includes '|'
+    // This line executes whenever the input doesnt includes '|'
     if (sets.eng === undefined) noset = true
 
     if (_test) {
       let res = runner(inT, sets, noset)
-      console.log(res)
+      //console.log(res)
       return res
     }
     message.channel.send(runner(inT, sets, noset))

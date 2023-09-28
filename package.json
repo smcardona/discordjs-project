@@ -12,6 +12,7 @@
   "license": "ISC",
   "dependencies": {
     "@discordjs/opus": "^0.7.0",
+    "ascii-table": "^0.0.9",
     "discord.js": "^12.5.3",
     "dotenv": "^16.0.0",
     "ffmpeg-static": "^4.4.0",

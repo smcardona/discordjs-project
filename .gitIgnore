@@ -3,4 +3,6 @@ bot-back.code-workspace
 backups
 TEST.js
 .env
+# working in a documentation system
+lib/docs
 *OH*
