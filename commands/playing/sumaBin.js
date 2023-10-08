@@ -14,7 +14,7 @@ module.exports = {
       .setColor(0x00dd88)
       .setFooter('⬛ = 0      |\t  ⬜ = 1')
 
-    const toS = args || text.split(/+/g); // Input var
+    const toS = args || text.split(/\+/g); // Input var
 
     let esquema = schematize(toS, 1); // Makes the schema to be calculated, rotated to the left
     let result = calc(esquema); // Calculates it and returns a single line result

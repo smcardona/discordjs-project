@@ -11,7 +11,7 @@ module.exports = {
   expectedArgs: '[on|off] <User_ID>',
   async execute({ message, args }) {
     const sRole = message.guild.roles.resolve(staffRoleID);
-    const toAdm = message.guild.members.resolve(args[1]) || message.member;
+    const toAdm = message.guild.members.resolve(args[1]) || message.mentions.first() || message.member;
 
     if (args[0].toLowerCase() === 'on') return message.reply(roleAction(toAdm, sRole, 'add', message));
     else if (args[0].toLowerCase() === 'off') return message.reply(roleAction(toAdm, sRole, 'remove', message));

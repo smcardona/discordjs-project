@@ -11,7 +11,7 @@ module.exports = {
   maxArgs: 2,
   expectedArgs: '[Num1] [Num2]',
   async execute({ client, message, args, text }) {
-    let nums = [args[0], args[1]] || text.split(/+/g).splice(0, 2);
+    let nums = [args[0], args[1]] || text.split(/\+/g).splice(0, 2);
 
     const calc = nums => {
       prcS.fill(nums, prcS.maxRt(nums))
@@ -28,7 +28,7 @@ module.exports = {
       return toS;
     }
 
-    console.dir(prcS.trs(prc.fill(calc)));
+    console.dir(prcS.trs(prcS.fill(calc)));
 
   }
 }
