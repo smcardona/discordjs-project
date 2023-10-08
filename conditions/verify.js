@@ -1,4 +1,4 @@
-const { serverRoleID } = require('../OH/IDS.json');
+const { serverRoleID } = require('../hiddenDir/IDs.json');
 module.exports = {
   name: 'VerifyChannelMannager',
   condition({ message }) {

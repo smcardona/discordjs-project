@@ -1,24 +1,33 @@
 {
-  "name": "bot",
-  "version": "1.0.0",
-  "description": "A discord bot project, to learn the language and the API",
-  "main": "bot.js",
+  "name": "botv14",
+  "version": "0.1.0",
+  "description": "Discord bot project in v14",
+  "main": "index.js",
   "scripts": {
-    "start": "node bot.js",
-    "dev": "npx nodemon bot.js"
+    "start": "node .",
+    "dev": "nodemon",
+    "upsl": "node interaction-deployer"
   },
-  "keywords": [],
-  "author": "DevPepesito",
+  "keywords": [
+    "v14",
+    "discordjs",
+    "discord",
+    "bot",
+    "project"
+  ],
+  "author": "Pepesito",
   "license": "ISC",
   "dependencies": {
-    "@discordjs/opus": "^0.7.0",
-    "ascii-table": "^0.0.9",
-    "discord.js": "^12.5.3",
-    "dotenv": "^16.0.0",
-    "ffmpeg-static": "^4.4.0",
+    "@discordjs/opus": "^0.9.0",
+    "@discordjs/voice": "^0.16.0",
+    "colors": "^1.4.0",
+    "discord.js": "^14.8.0",
+    "dotenv": "^16.0.3",
+    "ffmpeg-static": "^5.2.0",
+    "libsodium-wrappers": "^0.7.13",
     "random-seed": "^0.3.0"
   },
   "devDependencies": {
-    "nodemon": "^2.0.8"
+    "nodemon": "^2.0.22"
   }
 }

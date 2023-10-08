@@ -1,8 +1,13 @@
-node_modules
-bot-back.code-workspace
-backups
-TEST.js
 .env
+<<<<<<< Updated upstream
 # working in a documentation system
 lib/docs
 *OH*
+=======
+botv14.code-workspace
+node_modules
+test.js
+# Hidden stuff are personal commands or secret information
+*hidden*
+# Docs are on development
+*docs

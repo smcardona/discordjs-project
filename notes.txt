@@ -1,0 +1,13 @@
+NOTES FOR FUTURE ME
+
+> Implement a /help <commad> thing
+
+> Implement a guide Embed for enigma and other commands
+
+> Finish the create command interaction buttons, JSON, Send, Add more (hard)
+
+> Make the create button command
+
+> Think in a command that could use the database
+
+> Learn about libraries like robotjs, threejs, idk what else
