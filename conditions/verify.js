@@ -1,6 +1,6 @@
 const { serverRoleID } = require('../hiddenDir/IDs.json');
 module.exports = {
-  name: 'VerifyChannelMannager',
+  name: 'verify-user',
   condition({ message }) {
     if (message.channel.name == 'verify') { return true } else { return false };
   },

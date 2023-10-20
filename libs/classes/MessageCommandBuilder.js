@@ -66,7 +66,7 @@ class MessageCommandBuilder {
   }
 
   setPermissions() {
-    const permissions = Array.from(...arguments)
+    const permissions = Array.from(arguments)
     if (permissions.some(perm => typeof perm !== 'string')) {
       throw new Error('Permissions must be only words: Got input ' + perm)
     }
@@ -83,7 +83,7 @@ class MessageCommandBuilder {
   }
 
   setRequireRoles() {
-    const requireRoles = Array.from(...arguments)
+    const requireRoles = Array.from(arguments)
     if (requireRoles.some(role => typeof role !== 'string')) {
       throw new Error('Roles in requiredRoles must be string')
     }

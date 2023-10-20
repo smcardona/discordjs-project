@@ -31,7 +31,7 @@ module.exports = async function ({ message, args, prefix }) {
     if (typeof permissions === 'string') { permissions = [permissions] } validatePermissions(permissions);
   }
 
-  if (!ownersId.includes(message.author.id)) { // This conditional is just my permission bypass
+  if (!ownersId.includes(message.author.id) || true) { // This conditional is just my permission bypass
     let permissionError = this.data.permissionError;
     if (permissionError === undefined) { // Makes a default permission Error if there is not one defined
       permissionError = `you dont have the permissions: **${permissions.join(', ').toLowerCase()

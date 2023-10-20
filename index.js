@@ -20,7 +20,7 @@ client.conditions = new Collection();
 
 // Set categories to a client prop (this is for organization and for command information)
 const categoriesPath = path.join(__dirname, 'commands');
-client.categories = fs.readdirSync(categoriesPath).filter(cat => cat !== 'hiddenSecret')
+client.categories = fs.readdirSync(categoriesPath)/* .filter(cat => cat !== 'hiddenSecret') */
 
 // Set command to client collection
 console.log('Loading commands')
