@@ -8,6 +8,6 @@ NOTES FOR FUTURE ME
 
 > Make the create button command
 
-> Think in a command that could use the database
+> Think in a command that could use the database /register-user /register-guild /guild-settings (secret commands)
 
 > Learn about libraries like robotjs, threejs, idk what else

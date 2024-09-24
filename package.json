@@ -2,15 +2,16 @@
   "name": "botv14",
   "version": "0.1.0",
   "description": "Discord bot project in v14",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
     "start": "node .",
-    "dev": "nodemon",
-    "upsl": "node interaction-deployer"
+    "compile": "tsc",
+    "dev": "node ./dist/ --test",
+    "deploy-commands": "node ./dist/interaction-deployer"
   },
   "keywords": [
-    "v14",
     "discordjs",
+    "v14",
     "discord",
     "bot",
     "project"
@@ -20,14 +21,20 @@
   "dependencies": {
     "@discordjs/opus": "^0.9.0",
     "@discordjs/voice": "^0.16.0",
+    "axios": "^1.7.7",
     "colors": "^1.4.0",
     "discord.js": "^14.8.0",
     "dotenv": "^16.0.3",
     "ffmpeg-static": "^5.2.0",
     "libsodium-wrappers": "^0.7.13",
-    "random-seed": "^0.3.0"
+    "pg": "^8.12.0",
+    "pg-hstore": "^2.3.4",
+    "random-seed": "^0.3.0",
+    "sequelize": "^6.37.3"
   },
   "devDependencies": {
-    "nodemon": "^2.0.22"
+    "@types/node": "^22.4.0",
+    "@types/ws": "^8.5.12",
+    "typescript": "^5.6.2"
   }
 }
